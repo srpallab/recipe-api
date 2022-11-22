@@ -38,8 +38,48 @@
    - ~app/user/~   : User related code
    - ~app/recipe/~ : Recipe related code
 * Intro to TDD
+** Unit Test
+   - Code which tests code
+   - Sets up conditions/input
+   - Runs a piece of code
+   - Checks output with "assertions"
 * System Setup
+  - Docker, Docker compose
+  - Git
 * Project Setup 
+** Docker
+   - Define ~Dockerfile~
+   - Create Docker Compose configuration
+   - Run all commands via Docker Compose
+** Docker Hub introduce rate limit 
+   - 100 pulls / 6hr for unauthenticated users 
+   - 200 pulls / 6hr for authenticated users
+** GitHub Actions is a shared service
+   - 100 pulls / 6hr applied for all users 
+** Authenticate with Docker Hub
+   - Create account
+   - Setup credentials
+   - Login before running job
+   - Get200 pulls / 6hr for free. 
+** Configure Docker
+   - Choose python image as base image
+   - Install dependencies
+   - Setup users
+** Configure Docker Compose
+   - Define services
+   - Name
+   - Port mapping
+   - Volume mapping
+   - Command Example
+     #+BEGIN_SRC bash
+       docker-compose run --rm app sh -c "python manage.py collectstatic"
+     #+END_SRC
+     - ~docker-compose~ runs a Docker Compose command
+     - ~run~ will start a specific container defined in configuration
+     - ~--rm~ remove the container
+     - ~app~ is the name of the service
+     - ~sh -c~ passes in a shell command
+     - ~"python manage.py collectstatic"~ command to run inside container
 * Configure GitHub Actions
 * TDD with Django
 * Setup and Configure Database
