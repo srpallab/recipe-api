@@ -3,6 +3,35 @@
 #+options: h:1 num:nil toc:nil
 
 * App Design
+** 19 API Endpoints
+   - Schema
+     - GET ~/api/schema/~
+   - Health Check
+     - GET ~/api/health-check/~
+   - Managing recipes
+     - GET    ~/api/recipe/recipes/~
+     - POST   ~/api/recipe/recipes/~
+     - GET    ~/api/recipe/recipes/{id}/~
+     - PUT    ~/api/recipe/recipes/{id}/~
+     - PATCH  ~/api/recipe/recipes/{id}/~
+     - DELETE ~/api/recipe/recipes/{id}/~
+     - POST   ~/api/recipe/recipes/{id}/upload-image/~
+   - Managing users
+     - POST ~/api/user/create/~
+     - POST ~/api/user/token/~
+   - Managing tags
+     - GET    ~/api/recipe/tags/~
+     - PUT    ~/api/recipe/tags/{id}/~
+     - PATCH  ~/api/recipe/tags/{id}/~
+     - DELETE ~/api/recipe/tags/{id}/~
+   - Managing Ingredients
+     - GET    ~/api/recipe/ingredients/~
+     - PUT    ~/api/recipe/ingredients/{id}/~
+     - PATCH  ~/api/recipe/ingredients/{id}/~
+     - DELETE ~/api/recipe/ingredients/{id}/~
+** User Authentication
+** Browse able Admin Interface (Django Admin)
+** Browse able API (Swagger)
 * Intro to TDD
 * System Setup
 * Project Setup 
