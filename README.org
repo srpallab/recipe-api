@@ -1,30 +1,23 @@
 #+title: Learning Django REST from =Udemy=
 #+author: Shafiqur Rahman
 #+options: h:1 num:nil toc:nil
-* Course Introduction
-** Technology 
-   - Development Server
-     - Virtual Box
-     - Vagrant
-   - Application Code
-     - Python
-     - Django
-     - Django REST
-   - Tools
-     - Emacs
-     - Git
 
-* Setting up development environment
-* Setting up projects
-* Create development server
-* Create Django App
-* Setup Database
+* App Design
+* Intro to TDD
+* System Setup
+* Project Setup 
+* Configure GitHub Actions
+* TDD with Django
+* Setup and Configure Database
+* Build Ingredients API
+* Build Tags API
+* Build Recipe API
+* Build User API
+* API Documentation
 * Setup Django Admin
-* Introduction to ~APIView~
-* Introduction to ~ViewSets~
-* Create Profile API
-* Create a login API
-* Create profile feed API
-* Deploy API to server on AWS
+* Create User Model
+* Recipe Image API
+* Implementing Filtering
+* Deploy on AWS
 * Course Summary
-
+* Upgrades
