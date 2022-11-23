@@ -79,7 +79,24 @@
      - ~--rm~ remove the container
      - ~app~ is the name of the service
      - ~sh -c~ passes in a shell command
-     - ~"python manage.py collectstatic"~ command to run inside container
+     - ~"python manage.py collectstatic"~ command to run inside container 
+** Linting 
+   - Install flake8 package
+   - Run it through Docker Compose
+     #+BEGIN_SRC bash
+       docker-compose run --rm app sh -c "flake8"
+     #+END_SRC
+** Testing 
+   - Django test suite
+   - Setup test per Django app
+   - Run tests through Docker Compose
+     #+BEGIN_SRC bash
+       docker-compose run --rm app sh -c "python manage.py test"
+     #+END_SRC
+** Starting Django Project
+   #+BEGIN_SRC bash
+     docker-compose run --rm app sh -c "django-admin startproject app ."
+   #+END_SRC
 * Configure GitHub Actions
 * TDD with Django
 * Setup and Configure Database
