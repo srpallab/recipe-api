@@ -98,6 +98,31 @@
      docker-compose run --rm app sh -c "django-admin startproject app ."
    #+END_SRC
 * Configure GitHub Actions
+  - Automation tools
+  - Similar to Travis-CI, GitLab, CI/CD, Jenkins
+  - Run jobs when code changes
+  - Automate tasks
+** Common uses
+   - Deployment
+   - Code linting
+   - Unit tests
+** How it works
+   - Trigger: Push to GitHub
+   - Job: Run unit test
+   - Result: Success or fail
+** Pricing
+   - Charged per minutes
+   - 2,000 free minutes 
+** Configure
+   - Create a configuration file at ~.github/workflow/checks.yml~
+   - Set trigger
+   - Add steps for running and linting
+   - Configure Docker Hub authenticate
+** Authenticate Docker Hub
+   - Use docker login
+   - Add secrets to GitHub project Actions Menu
+     - ~DOCKERHUB_TOKEN~
+     - ~DOCKERHUB_USER~
 * TDD with Django
 * Setup and Configure Database
 * Build Ingredients API
