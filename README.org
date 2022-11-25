@@ -124,6 +124,65 @@
      - ~DOCKERHUB_TOKEN~
      - ~DOCKERHUB_USER~
 * TDD with Django
+** Django test framework
+   - Based on the ~unittest~ library
+   - Django adds features
+     - Test client - dummy web browser
+     - Simulation authentication
+     - Temporary database
+   - Django REST Framework adds features
+     - API test client 
+** Where do you put tests
+   - Placeholder ~tests.py~ added to each app
+   - Or, create ~tests/~ sub-directory to split tests up
+   - keep in mind
+     - Only use ~test.py~ or ~tests/~ directory (not both)
+     - Test modules must start with ~test_~
+     - Test directories must contain ~__init__.py~
+** Test Database
+   - Test code that uses the DB
+   - Specific database for tests
+   - Happens for every test
+** Test Class
+   - ~SimpleTestCase~
+     - No database integration
+     - Useful if no database is required for test
+     - Save time executing tests
+   - ~TestCase~
+     - Database integration
+     - Useful for testing code that uses the database 
+** Writing tests
+   - Import test Class
+   - Import objects to test
+   - Define test class
+   - Add test method
+   - Setup inputs
+   - Execute code to be tested
+   - Check output
+** Mocking 
+   - Override or change behave of dependencies
+   - Avoid unintended side effects
+   - Isolate code being tested
+   - Example:
+     #+begin_example
+       register_user() ---> create_in_db() ---> send_welcome_email()
+     #+end_example
+   - use ~unittest.mock~
+     - ~MagicMock/Mock~ replace real objects
+     - ~patch~ override code for tests
+** Testing API
+   - Make actual requests
+   - Check results
+   - Django REST framework API Client
+     - Based on Django Test Client
+     - Make requests
+     - Check results
+     - Override any authentication
+   - Using the API Client
+     - Import ~APIClient~
+     - Create client
+     - Make request
+     - Check result
 * Setup and Configure Database
 * Build Ingredients API
 * Build Tags API
