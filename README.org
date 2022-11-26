@@ -1,4 +1,4 @@
-#+title: Learning Django REST from =Udemy=
+#+title: Learning Django REST from ~Udemy~
 #+author: Shafiqur Rahman
 #+options: h:1 num:nil toc:nil
 
@@ -184,6 +184,67 @@
      - Make request
      - Check result
 * Setup and Configure Database
+** PostgreSQL
+   - Integrate well with Django
+** Docker Compose
+   - Define with project (re-usable)
+   - Persistent data using volume
+   - Handles network configuration
+   - Environment variable configuration
+** Network connectivity
+   - Set ~depends_on~ on ~app~ service to start ~db~ first
+   - Docker Compose creates a network
+   - The ~app~ service can use ~db~ host name
+** Volumes
+   - Persistent data
+   - Maps directory in container to local machine.
+** Steps for configuring database
+   - Tell Django how to connect
+   - Install the tool Django uses to connect
+   - Update requirements to install PostgreSQL adapter
+   - Django settings 
+     - Engine (type of Database)
+     - ~Hostname~ (IP or domain name for database)
+     - Port
+     - Database Name.
+     - Username
+     - Password
+   - Pull configuration values from environment variable
+   - Easily passed to Docker
+   - Used in local development or production
+   - Single place to configure project
+   - Easy to do with Python
+** ~Psycopg2~
+   - The package that you need in order for Django to connect to our Database
+   - Most popular PostgreSQL adapter for Python.
+   - ~psycopg2-binary~
+     - Okay for development
+     - Not good for production
+   - ~psycopg2~
+     - Compiles form source
+     - Required additional dependencies
+     - Easy to install with Docker
+** Installing ~Psycopg2~
+   - List of package dependencies in docs
+     - C compiler
+     - ~python3-dev~
+     - ~libpq-dev~
+   - Equivalent packages for Alpine
+     - ~postgresql-client~
+     - ~build-base~
+     - ~postgresql-dev~
+     - ~musl-dev~
+** Problem with Docker compose
+   - Using ~depends_on~ ensure service start, doesn't ensure
+     application is running
+   - Make Django "wait for db"
+     - Check for database availability
+     - Continue when database ready
+   - Create custom Django management command
+   - Create new app for db
+     #+BEGIN_SRC bash
+       docker-compose run --rm app sh -c "python manage.py startapp core"
+     #+END_SRC
 * Build Ingredients API
 * Build Tags API
 * Build Recipe API
