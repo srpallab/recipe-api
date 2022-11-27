@@ -340,10 +340,27 @@
    - Format of responses (output)
      - Responses ~JSON~ format
    - Authentication process
+* Build User API
+** User API
+   - User register
+   - Creating authentication token
+   - Viewing or updating profile 
+** Endpoints
+   - ~user/create/~
+     - POST - Register a new user.
+   - ~user/token/~
+     - POST - Create new token
+   - ~user/me~
+     - PUT/PATCH - Update profile
+     - GET - View profile
+** Authentication
+   - Basic : Send username and password with each request
+   - Token : Use a token in the HTTP header
+   - JSON Web Token (~JWT~) : Use an access and refresh token
+   - Session : Use cookies.
 * Build Ingredients API
 * Build Tags API
 * Build Recipe API
-* Build User API
 * Recipe Image API
 * Implementing Filtering
 * Deploy on AWS
