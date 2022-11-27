@@ -5,7 +5,6 @@ import time
 from django.db.utils import OperationalError
 from psycopg2 import OperationalError as Psycopg2OpError
 from django.core.management.base import BaseCommand
-from core.models import User
 
 
 class Command(BaseCommand):
@@ -17,7 +16,6 @@ class Command(BaseCommand):
         while db_up is False:
             try:
                 self.check(databases=['default'])
-                User.objects.all()
                 db_up = True
             except (Psycopg2OpError, OperationalError):
                 self.stdout.write('Database unavailable, waiting 1 sec')
