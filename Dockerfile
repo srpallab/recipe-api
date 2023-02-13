@@ -1,4 +1,4 @@
-FROM python:3.9-alpine3.13
+FROM python:3.10-alpine3.13
 LABEL maintainer="srpallab.com"
 
 ENV PYTHONUNBUFFERED 1

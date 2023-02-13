@@ -29,14 +29,14 @@
      - PUT    ~/api/recipe/ingredients/{id}/~
      - PATCH  ~/api/recipe/ingredients/{id}/~
      - DELETE ~/api/recipe/ingredients/{id}/~
-** User Authentication
-** Browse able Admin Interface (Django Admin)
-** Browse able API (Swagger)
 ** Project Structure 
    - ~app/~        : Django Project
    - ~app/core/~   : Code shared between multiple apps
    - ~app/user/~   : User related code
    - ~app/recipe/~ : Recipe related code
+** User Authentication
+** Browse able Admin Interface (Django Admin)
+** Browse able API (Swagger)
 * Intro to TDD
 ** Unit Test
    - Code which tests code
